@@ -1,0 +1,306 @@
+/* Registration Page Styles */
+.registration-options {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.registration-card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 10px 25px var(--shadow);
+    transition: transform 0.3s;
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 5px solid var(--primary);
+}
+
+.registration-card .cta-button {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.registration-card .cta-button:hover {
+    background: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.registration-card:hover {
+    transform: translateY(-10px);
+}
+
+.registration-card.individual {
+    border-top-color: var(--primary);
+}
+
+.registration-card.collective {
+    border-top-color: var(--accent);
+}
+
+.registration-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.registration-card.individual .registration-icon {
+    background: linear-gradient(to right, var(--primary), var(--primary-dark));
+}
+
+.registration-card.collective .registration-icon {
+    background: linear-gradient(to right, var(--accent), var(--primary));
+}
+
+.registration-icon i {
+    color: white;
+    font-size: 2rem;
+}
+
+.registration-card h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.registration-card p {
+    margin-bottom: 25px;
+    line-height: 1.7;
+    flex-grow: 1;
+}
+
+.registration-info {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 30px;
+    margin: 50px 0;
+    box-shadow: 0 10px 25px var(--shadow);
+}
+
+.registration-info h3 {
+    color: var(--primary);
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.registration-info ul {
+    list-style-type: none;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.registration-info li {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    line-height: 1.7;
+}
+
+.registration-info li:before {
+    content: "•";
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 15px;
+    top: -5px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    margin: 5% auto;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 700px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s;
+    overflow: hidden;
+}
+
+.modal-header {
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    color: white;
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.close {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #ffd700;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.flow-steps {
+    margin-bottom: 30px;
+}
+
+.flow-step {
+    display: flex;
+    margin-bottom: 25px;
+    align-items: flex-start;
+}
+
+.step-number {
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+.step-content h4 {
+    color: var(--primary);
+    margin: 0 0 8px 0;
+    font-size: 1.2rem;
+}
+
+.step-content p {
+    margin: 0;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.step-content a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px dotted var(--primary);
+    transition: all 0.3s;
+}
+
+.step-content a:hover {
+    color: var(--primary-dark);
+    border-bottom: 1px solid var(--primary-dark);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.modal-actions .cta-button {
+    min-width: 180px;
+    text-align: center;
+}
+
+.cta-button.secondary {
+    background-color: var(--card-bg);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.cta-button.secondary:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .registration-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .registration-card {
+        min-width: 100%;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
+    
+    .flow-step {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .step-number {
+        margin: 0 auto 15px;
+    }
+    
+    .modal-actions {
+        flex-direction: column;
+    }
+    
+    .modal-actions .cta-button {
+        width: 100%;
+    }
+}

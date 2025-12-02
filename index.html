@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Boekit Trail Run 2025</title>
+
+    <!-- Favicon Setup & Config -->
+    <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="DBTR" />
+    <link rel="manifest" href="images/site.webmanifest" />
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Page Specific Styles -->
+    <link rel="stylesheet" href="css/entry-list.css">
+
+    <!-- Global Scripts (defer) -->
+    <script src="js/theme.js" defer></script>
+    <!-- <script src="js/navbar.js" defer></script> -->
+    <script src="js/back-to-top.js" defer></script>
+    <script src="js/entry-list.js" defer></script>
+
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-container">
+                <a href="index.html" class="navbar-logo">
+                    <img src="images/logo dbtr (120x30).png" alt="DBTR Logo">
+                    <!-- <span class="navbar-logo-text">De Boekit Trail Run 2025</span> -->
+                </a>
+
+                <ul class="navbar-menu" id="navbarMenu">
+                    <!-- <li class="navbar-item">
+                        <a href="index.html" class="navbar-link">Home</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="rules-and-regulations.html" class="navbar-link">Rules & Regulations</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="entry-list.html" class="navbar-link active">Entry List</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="registration.html" class="navbar-link">Registration</a>
+                    </li> -->
+                    <li class="navbar-item">
+                        <button class="theme-toggle" id="themeToggle">
+                            <i class="fas fa-moon" id="themeIcon"></i>
+                            <span id="themeText">Dark Mode</span>
+                        </button>
+                    </li>
+                </ul>
+
+                <button class="navbar-toggle" id="navbarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="page-title">Daftar Peserta</h2>
+
+        <!-- <div class="category-tabs" id="categoryTabs">
+            <div class="category-tab active" data-category="all">Semua Kategori</div>
+            <div class="category-tab" data-category="Umum">Umum</div>
+            <div class="category-tab" data-category="Pelajar">Pelajar</div>
+            <div class="category-tab" data-category="Master">Master</div>
+        </div> -->
+
+        <div class="controls-container">
+            <div class="search-box">
+                <input type="text" id="searchInput" class="search-input" placeholder="Cari peserta...">
+                <button class="search-btn" onclick="searchTable()">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="reset-btn" onclick="resetSearch()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <button class="refresh-btn" onclick="loadRecords()" id="refreshButton">
+                <i class="fas fa-refresh"></i> <span id="buttonText">Refresh</span>
+            </button>
+        </div>
+
+        <div class="result-count" id="resultCount"></div>
+
+        <div class="table-container">
+            <table id="recordsTable">
+                <thead>
+                    <tr>
+                        <th>Bib No.</th>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Community Name</th>
+                        <th>Phone No.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Records will be inserted here -->
+                    <tr>
+                        <td colspan="5" class="message loading">Memuat data peserta, silakan tunggu...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Kepala Batu Team. All rights reserved.</p>
+        <div class="contact-info">
+            <p><span class="icon-wrapper"><i class="fas fa-envelope"></i></span> kepalabatuteam@gmail.com</p>
+            <p><span class="icon-wrapper"><i class="fa-brands fa-whatsapp"></i></span> (62) 821 5481 5113</p>
+            <p><span class="icon-wrapper"><i class="fas fa-map-marker-alt"></i></span> Balikpapan, Indonesia</p>
+        </div>
+    </footer>
+
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+</body>
+
+</html>

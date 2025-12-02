@@ -1,0 +1,156 @@
+/* Tabs Navigation */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tab {
+    padding: 12px 25px;
+    background-color: var(--card-bg);
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tab:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--shadow);
+}
+
+.tab.active {
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    color: white;
+    border-color: transparent;
+}
+
+/* Rules Content */
+.rules-content {
+    display: none;
+}
+
+.rules-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.rule-card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px var(--shadow);
+    transition: transform 0.3s ease;
+    border-top: 5px solid var(--primary);
+}
+
+.rule-card:hover {
+    transform: translateY(-5px);
+}
+
+.rule-card h3 {
+    color: var(--primary);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.rule-card ul {
+    list-style-type: none;
+}
+
+.rule-card li {
+    margin-bottom: 15px;
+    padding-left: 35px;
+    position: relative;
+    line-height: 1.7;
+}
+
+.rule-card li:before {
+    content: "•";
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.8rem;
+    position: absolute;
+    left: 15px;
+    top: -12px;
+}
+
+.rule-card ul ul {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.rule-card a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px dotted var(--primary);
+    transition: all 0.3s;
+}
+
+.rule-card a:hover {
+    color: var(--primary-dark);
+    border-bottom: 1px solid var(--primary-dark);
+}
+
+.important-note {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 35px;
+    margin: 50px auto;
+    box-shadow: 0 10px 25px var(--shadow);
+    border-left: 5px solid var(--secondary);
+    text-align: center;
+}
+
+.important-note h2 {
+    color: var(--secondary);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 1.8rem;
+}
+
+.important-note p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+/* Responsive adjustments for rules page */
+@media (max-width: 768px) {
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tab {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .rule-card {
+        padding: 20px;
+    }
+    
+    .rule-card h3 {
+        font-size: 1.3rem;
+    }
+}
